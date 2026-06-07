@@ -14,13 +14,14 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #4a4a4a;
             overflow-x: hidden;
+            background: #fdfbf9;
         }
 
         /* Header Styles */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #8e4585 0%, #c06c84 50%, #f67280 100%);
             color: white;
             text-align: center;
             padding: 6rem 2rem;
@@ -35,8 +36,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff10"><polygon points="0,0 1000,0 1000,100"/></svg>');
-            opacity: 0.1;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
 
         .profile-img {
@@ -44,22 +44,24 @@
             height: 150px;
             border-radius: 50%;
             margin: 0 auto 2rem;
-            background: #f39c12;
+            background: linear-gradient(135deg, #d4a574, #e8c29a);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
             font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #5c2d5c;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
             z-index: 2;
+            border: 4px solid rgba(255,255,255,0.3);
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             position: relative;
             z-index: 2;
         }
@@ -67,18 +69,19 @@
         .hero .subtitle {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #f39c12;
+            color: #ffd9b3;
             font-weight: 500;
             position: relative;
             z-index: 2;
         }
 
         .hero .description {
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 1.05rem;
+            max-width: 700px;
             margin: 0 auto 2rem;
             position: relative;
             z-index: 2;
+            color: rgba(255,255,255,0.92);
         }
 
         .cta-buttons {
@@ -90,7 +93,7 @@
             display: inline-block;
             padding: 12px 30px;
             margin: 0 10px;
-            background: #f39c12;
+            background: #d4a574;
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -99,18 +102,18 @@
         }
 
         .btn:hover {
-            background: #e67e22;
+            background: #c4915f;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
             background: transparent;
-            border: 2px solid #f39c12;
+            border: 2px solid #d4a574;
         }
 
         .btn-secondary:hover {
-            background: #f39c12;
+            background: #d4a574;
         }
 
         /* Section Styles */
@@ -124,7 +127,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: #5c2d5c;
             position: relative;
             font-weight: 600;
         }
@@ -137,7 +140,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #c06c84, #d4a574);
             border-radius: 2px;
         }
 
@@ -153,16 +156,18 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(142, 69, 133, 0.08);
             transition: transform 0.3s ease;
+            border: 1px solid rgba(192, 108, 132, 0.1);
         }
 
         .about-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(142, 69, 133, 0.12);
         }
 
         .about-card h3 {
-            color: #2c3e50;
+            color: #5c2d5c;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -179,9 +184,10 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(142, 69, 133, 0.08);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(192, 108, 132, 0.1);
         }
 
         .skill-category::before {
@@ -191,24 +197,24 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #8e4585, #c06c84, #d4a574);
         }
 
         .skill-category h3 {
-            color: #2c3e50;
+            color: #5c2d5c;
             margin-bottom: 1.5rem;
             font-size: 1.3rem;
         }
 
         .skill-item {
-            background: #f8f9fa;
+            background: #fdf2f8;
             padding: 8px 16px;
-            margin: 8px 0;
+            margin: 8px 4px;
             border-radius: 20px;
             display: inline-block;
             font-size: 0.9rem;
-            color: #495057;
-            border-left: 3px solid #f39c12;
+            color: #6b3a6b;
+            border-left: 3px solid #c06c84;
         }
 
         /* Experience Section */
@@ -224,7 +230,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(to bottom, #8e4585, #c06c84, #d4a574);
         }
 
         .timeline-item {
@@ -234,7 +240,8 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(142, 69, 133, 0.08);
+            border: 1px solid rgba(192, 108, 132, 0.1);
         }
 
         .timeline-item::before {
@@ -245,18 +252,18 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background: #f39c12;
+            background: #c06c84;
             border: 3px solid white;
-            box-shadow: 0 0 0 3px #f39c12;
+            box-shadow: 0 0 0 3px #c06c84;
         }
 
         .timeline-item h3 {
-            color: #2c3e50;
+            color: #5c2d5c;
             margin-bottom: 0.5rem;
         }
 
         .timeline-item .date {
-            color: #f39c12;
+            color: #c06c84;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -273,17 +280,18 @@
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(142, 69, 133, 0.08);
             transition: all 0.3s ease;
+            border: 1px solid rgba(192, 108, 132, 0.1);
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(142, 69, 133, 0.15);
         }
 
         .project-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #8e4585, #c06c84);
             color: white;
             padding: 2rem;
             text-align: center;
@@ -294,7 +302,7 @@
         }
 
         .project-content h3 {
-            color: #2c3e50;
+            color: #5c2d5c;
             margin-bottom: 1rem;
         }
 
@@ -303,8 +311,8 @@
         }
 
         .tech-tag {
-            background: #e9ecef;
-            color: #495057;
+            background: #fdf2f8;
+            color: #6b3a6b;
             padding: 4px 12px;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -315,14 +323,14 @@
         .project-link {
             display: inline-block;
             margin-top: 1rem;
-            color: #f39c12;
+            color: #c06c84;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            color: #e67e22;
+            color: #8e4585;
         }
 
         /* Contact Section */
@@ -338,10 +346,11 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(142, 69, 133, 0.08);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(192, 108, 132, 0.1);
         }
 
         .contact-item::before {
@@ -351,12 +360,12 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #8e4585, #c06c84, #d4a574);
         }
 
         .contact-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(142, 69, 133, 0.15);
         }
 
         .contact-icon {
@@ -366,7 +375,7 @@
         }
 
         .contact-item h3 {
-            color: #2c3e50;
+            color: #5c2d5c;
             margin-bottom: 1rem;
             font-size: 1.3rem;
             font-weight: 600;
@@ -382,14 +391,14 @@
         }
 
         .contact-link:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #8e4585, #c06c84);
             color: white;
             transform: scale(1.02);
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #3d1f3d 0%, #5c2d5c 100%);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -425,12 +434,10 @@
             }
         }
 
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -455,8 +462,8 @@
     <section class="hero">
         <div class="profile-img">LN</div>
         <h1>Luvhengo Ntanganedzeni</h1>
-        <p class="subtitle">Computer Science & Mathematics Graduate</p>
-        <p class="description">Motivated and detail-oriented graduate seeking challenging positions in IT Support, Software Engineering, or Data Analysis. Committed to continuous learning and professional development.</p>
+        <p class="subtitle">Software Developer | Junior Full-Stack Developer</p>
+        <p class="description">Detail-oriented Software Developer with a strong foundation in Computer Science and Mathematics and practical experience in full-stack development, backend systems, and enterprise IT environments. Currently working at Adapt IT as a Software Developer, with prior experience at Hemmersbach in IT support. Proficient in C#, ASP.NET, Angular, Java, SQL, PostgreSQL, and Oracle Database, with a strong interest in building scalable, secure, and maintainable software solutions.</p>
         <div class="cta-buttons">
             <a href="#contact" class="btn">Get In Touch</a>
             <a href="#projects" class="btn btn-secondary">View Projects</a>
@@ -469,17 +476,22 @@
         <div class="about-grid">
             <div class="about-card">
                 <h3>🎓 Education</h3>
-                <p><strong>Bachelor of Science in Computer Science and Mathematics</strong></p>
-                <p>University of Venda (2018-2023)</p>
-                <p>Specialized in data structures, algorithms, database management systems, software engineering, operating systems, and network security.</p>
+                <p><strong>University of Venda</strong></p>
+                <p>Bachelor of Science Foundation (Jan 2018 - Dec 2019)</p>
+                <p>Bachelor of Science in Computer Science and Mathematics (Jan 2019 - Dec 2023)</p>
+                <br>
+                <p><strong>Relevant Coursework:</strong> Data structures and algorithms, Database management systems, Software engineering, Operating systems, Network security, Research analysis, Discrete mathematics.</p>
             </div>
             <div class="about-card">
-                <h3>💼 Experience</h3>
-                <p>Experienced in providing technical support and educational guidance through roles as Computer Science Laboratory Assistant and Digital Maths Tutor at University of Venda.</p>
+                <h3>💼 Current Role</h3>
+                <p><strong>Software Developer at Adapt IT – Midrand</strong></p>
+                <p>Jan 2025 – Present</p>
+                <br>
+                <p>Developing and maintaining web applications using C#, ASP.NET, Angular, and Java. Building and consuming RESTful APIs. Implementing backend features including activity logging, validation, and system integrations.</p>
             </div>
             <div class="about-card">
                 <h3>🎯 Goals</h3>
-                <p>Eager to apply technical skills and problem-solving abilities to contribute to innovative projects and provide top-tier support within a dynamic team environment.</p>
+                <p>Eager to apply technical skills and problem-solving abilities to contribute to innovative projects and build scalable, secure, and maintainable software solutions within dynamic team environments.</p>
             </div>
         </div>
     </section>
@@ -489,33 +501,39 @@
         <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Programming Languages</h3>
+                <h3>Languages & Frameworks</h3>
+                <div class="skill-item">C#</div>
+                <div class="skill-item">ASP.NET</div>
+                <div class="skill-item">Angular</div>
                 <div class="skill-item">Java</div>
                 <div class="skill-item">JavaScript</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">HTML/CSS</div>
-                <div class="skill-item">PHP</div>
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">SCSS</div>
             </div>
             <div class="skill-category">
-                <h3>Databases & Tools</h3>
+                <h3>Databases</h3>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">Oracle Database</div>
                 <div class="skill-item">MySQL</div>
+                <div class="skill-item">SQL</div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Concepts</h3>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Visual Studio Code</div>
+                <div class="skill-item">Microsoft Excel</div>
+                <div class="skill-item">REST APIs</div>
                 <div class="skill-item">Database Design</div>
-                <div class="skill-item">System Development</div>
-                <div class="skill-item">Project Planning</div>
+                <div class="skill-item">Backend Development</div>
+                <div class="skill-item">SDLC</div>
             </div>
             <div class="skill-category">
                 <h3>Soft Skills</h3>
-                <div class="skill-item">Problem Solving</div>
-                <div class="skill-item">Research Skills</div>
-                <div class="skill-item">Training & Presentation</div>
-                <div class="skill-item">Analytical Skills</div>
-            </div>
-            <div class="skill-category">
-                <h3>Specialized Knowledge</h3>
-                <div class="skill-item">Data Visualization</div>
-                <div class="skill-item">Statistical Analysis</div>
-                <div class="skill-item">Network Security</div>
-                <div class="skill-item">Cyber Security</div>
+                <div class="skill-item">Analytical Thinking & Problem Solving</div>
+                <div class="skill-item">Communication & Documentation</div>
+                <div class="skill-item">Team Collaboration</div>
+                <div class="skill-item">Time Management</div>
             </div>
         </div>
     </section>
@@ -525,12 +543,20 @@
         <h2>Work Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>Computer Science Laboratory Assistant</h3>
-                <div class="date">February 2021 - November 2021 | University of Venda</div>
-                <p>• Provided technical support and assistance to students during laboratory sessions</p>
-                <p>• Guided students through practical exercises and projects related to computer science concepts</p>
-                <p>• Maintained and updated laboratory computers and software</p>
-                <p>• Ensured all systems were up-to-date and functional for student use</p>
+                <h3>Software Developer</h3>
+                <div class="date">Jan 2025 – Present | Adapt IT – Midrand</div>
+                <p>• Developing and maintaining web applications using C#, ASP.NET, Angular, and Java.</p>
+                <p>• Designing, querying, and optimizing databases using PostgreSQL, Oracle Database, and SQL.</p>
+                <p>• Building and consuming RESTful APIs.</p>
+                <p>• Implementing backend features including activity logging, validation, and system integrations.</p>
+                <p>• Collaborating with cross-functional teams to deliver reliable software solutions.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>IT Support / Cybersecurity Learnership</h3>
+                <div class="date">Jun 2024 – Jan 2025 | Hemmersbach – Midrand</div>
+                <p>• Delivered IT support services in an enterprise environment.</p>
+                <p>• Assisted with system access management, troubleshooting, and incident resolution.</p>
+                <p>• Supported security and operational best practices.</p>
             </div>
             <div class="timeline-item">
                 <h3>Digital Maths Tutor</h3>
@@ -541,11 +567,12 @@
                 <p>• Conducted review sessions to help students prepare for examinations</p>
             </div>
             <div class="timeline-item">
-                <h3>Current Learning</h3>
-                <div class="date">Ongoing</div>
-                <p>• Currently pursuing cyber security learnership</p>
-                <p>• Expanding knowledge in network security and ethical hacking</p>
-                <p>• Staying updated with latest technology trends and industry best practices</p>
+                <h3>Computer Science Laboratory Assistant</h3>
+                <div class="date">February 2021 - November 2021 | University of Venda</div>
+                <p>• Provided technical support and assistance to students during laboratory sessions</p>
+                <p>• Guided students through practical exercises and projects related to computer science concepts</p>
+                <p>• Maintained and updated laboratory computers and software</p>
+                <p>• Ensured all systems were up-to-date and functional for student use</p>
             </div>
         </div>
     </section>
@@ -559,13 +586,14 @@
                     <h3>📊 Inventory Management System</h3>
                 </div>
                 <div class="project-content">
-                    <p>Developed a comprehensive web-based application to manage inventory for a local business, streamlining the inventory tracking process and reducing manual errors by 50%.</p>
+                    <p>Developed a web-based application to manage inventory for a local business. Streamlined the inventory tracking process, reducing manual errors by 50%.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
                         <span class="tech-tag">JavaScript</span>
                         <span class="tech-tag">PHP</span>
                         <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">C#</span>
                     </div>
                 </div>
             </div>
@@ -574,12 +602,11 @@
                     <h3>📈 Data Visualization Tool</h3>
                 </div>
                 <div class="project-content">
-                    <p>Created an interactive tool to visualize large datasets for better data interpretation and decision-making, enabling users to generate interactive graphs and charts.</p>
+                    <p>Developed a tool to visualize large datasets for better data interpretation and decision-making. Enabled users to generate interactive graphs and charts, enhancing data comprehension.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Matplotlib</span>
                         <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Data Analysis</span>
                     </div>
                 </div>
             </div>
@@ -615,15 +642,14 @@
             <div class="contact-item">
                 <div class="contact-icon">📞</div>
                 <h3>Phone</h3>
-                <a href="tel:+27829562759" class="contact-link">
-                    <p>082 956 2759</p>
+                <a href="tel:+27829632759" class="contact-link">
+                    <p>082 963 2759</p>
                 </a>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">📍</div>
                 <h3>Location</h3>
-                <p>Gauteng, Midrand</p>
-                <p>Waterfall City, 9020</p>
+                <p>Midrand, Gauteng, South Africa</p>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">💼</div>
@@ -637,7 +663,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Luvhengo Ntanganedzeni. All rights reserved. | Building innovative solutions with passion and expertise.</p>
+        <p>&copy; 2025 Luvhengo Ntanganedzeni. All rights reserved. | Building scalable, secure, and maintainable software solutions.</p>
     </footer>
 </body>
 </html>
