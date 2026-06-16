@@ -1,16 +1,16 @@
 /* === VARIABLES === */
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: rgba(18, 18, 30, 0.8);
-    --text-primary: #e4e4e7;
-    --text-secondary: #a1a1aa;
-    --accent: #6366f1;
-    --accent-light: #818cf8;
-    --accent-glow: rgba(99, 102, 241, 0.3);
-    --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
-    --gradient-2: linear-gradient(135deg, #06b6d4, #6366f1);
-    --border: rgba(99, 102, 241, 0.15);
+    --bg-primary: #0d0a0f;
+    --bg-secondary: #14101a;
+    --bg-card: rgba(20, 12, 24, 0.8);
+    --text-primary: #f0e6f0;
+    --text-secondary: #b8a0b8;
+    --accent: #e63974;
+    --accent-light: #f472b6;
+    --accent-glow: rgba(230, 57, 116, 0.3);
+    --gradient-1: linear-gradient(135deg, #e63974, #c026d3, #9333ea);
+    --gradient-2: linear-gradient(135deg, #f472b6, #e63974);
+    --border: rgba(230, 57, 116, 0.15);
     --glass: rgba(255, 255, 255, 0.03);
     --radius: 16px;
     --font: 'Inter', sans-serif;
@@ -19,16 +19,16 @@
 
 /* === LIGHT THEME === */
 [data-theme="light"] {
-    --bg-primary: #f8f9fc;
-    --bg-secondary: #eef0f5;
+    --bg-primary: #fdf2f8;
+    --bg-secondary: #fce7f3;
     --bg-card: rgba(255, 255, 255, 0.9);
     --text-primary: #1a1a2e;
-    --text-secondary: #555770;
-    --accent: #6366f1;
-    --accent-light: #4f46e5;
-    --accent-glow: rgba(99, 102, 241, 0.2);
-    --border: rgba(99, 102, 241, 0.2);
-    --glass: rgba(99, 102, 241, 0.04);
+    --text-secondary: #64475c;
+    --accent: #e63974;
+    --accent-light: #be185d;
+    --accent-glow: rgba(230, 57, 116, 0.2);
+    --border: rgba(230, 57, 116, 0.2);
+    --glass: rgba(230, 57, 116, 0.04);
 }
 
 [data-theme="light"] .cursor {
@@ -37,11 +37,11 @@
 }
 
 [data-theme="light"] #navbar {
-    background: rgba(248, 249, 252, 0.9);
+    background: rgba(253, 242, 248, 0.9);
 }
 
 [data-theme="light"] #navbar.scrolled {
-    background: rgba(248, 249, 252, 0.97);
+    background: rgba(253, 242, 248, 0.97);
 }
 
 [data-theme="light"] .code-window {
@@ -75,7 +75,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: var(--accent) var(--bg-primary);
+    scrollbar-color: #e63974 var(--bg-primary);
 }
 
 body {
@@ -658,8 +658,8 @@ body {
 
 .coursework-tags span {
     padding: 5px 12px;
-    background: rgba(99, 102, 241, 0.08);
-    border: 1px solid rgba(99, 102, 241, 0.15);
+    background: rgba(230, 57, 116, 0.08);
+    border: 1px solid rgba(230, 57, 116, 0.15);
     border-radius: 20px;
     font-size: 0.78rem;
     color: var(--text-secondary);
@@ -776,8 +776,8 @@ body {
 
 .skill-tag {
     padding: 6px 14px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(230, 57, 116, 0.1);
+    border: 1px solid rgba(230, 57, 116, 0.2);
     border-radius: 20px;
     font-size: 0.8rem;
     color: var(--accent-light);
@@ -785,7 +785,7 @@ body {
 }
 
 .skill-tag:hover {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(230, 57, 116, 0.2);
     border-color: var(--accent);
     transform: translateY(-2px);
 }
@@ -890,7 +890,7 @@ body {
 
 .exp-tags span {
     padding: 4px 12px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(230, 57, 116, 0.1);
     border-radius: 15px;
     font-size: 0.75rem;
     color: var(--accent-light);
@@ -967,8 +967,8 @@ body {
 
 .project-tech span {
     padding: 4px 12px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(230, 57, 116, 0.1);
+    border: 1px solid rgba(230, 57, 116, 0.2);
     border-radius: 15px;
     font-size: 0.75rem;
     color: var(--accent-light);
@@ -1030,7 +1030,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(230, 57, 116, 0.1);
     color: var(--accent);
 }
 
@@ -1087,7 +1087,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(230, 57, 116, 0.1);
     color: var(--accent);
     margin-bottom: 1.5rem;
     position: relative;
@@ -1115,8 +1115,8 @@ body {
 
 .ai-tags span {
     padding: 4px 10px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(230, 57, 116, 0.1);
+    border: 1px solid rgba(230, 57, 116, 0.2);
     border-radius: 12px;
     font-size: 0.72rem;
     color: var(--accent-light);

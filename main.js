@@ -20,7 +20,7 @@ document.querySelectorAll('a, button, .btn-primary, .btn-outline, .project-card,
         cursor.style.transform += ' scale(2)';
         follower.style.width = '60px';
         follower.style.height = '60px';
-        follower.style.borderColor = 'rgba(99, 102, 241, 0.5)';
+        follower.style.borderColor = 'rgba(230, 57, 116, 0.5)';
     });
     el.addEventListener('mouseleave', () => {
         follower.style.width = '40px';
@@ -50,7 +50,7 @@ function initThreeJS() {
         positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
 
         const color = new THREE.Color();
-        color.setHSL(0.65 + Math.random() * 0.1, 0.8, 0.5 + Math.random() * 0.3);
+        color.setHSL(0.93 + Math.random() * 0.07, 0.8, 0.5 + Math.random() * 0.3);
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
         colors[i * 3 + 2] = color.b;
@@ -83,7 +83,7 @@ function initThreeJS() {
     lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
     
     const lineMaterial = new THREE.LineBasicMaterial({
-        color: 0x6366f1,
+        color: 0xe63974,
         transparent: true,
         opacity: 0.1,
         blending: THREE.AdditiveBlending
@@ -239,63 +239,69 @@ function initAnimations() {
         });
     });
 
-    // Section reveals
+    // Scroll-triggered animations using fromTo to avoid invisible state
     gsap.utils.toArray('.section-header').forEach(header => {
-        gsap.from(header, {
-            scrollTrigger: { trigger: header, start: 'top 80%' },
-            opacity: 0, y: 50, duration: 0.8
-        });
+        gsap.fromTo(header, 
+            { opacity: 0, y: 50 },
+            { scrollTrigger: { trigger: header, start: 'top 85%', toggleActions: 'play none none none' }, opacity: 1, y: 0, duration: 0.8 }
+        );
     });
 
-    // About section
-    gsap.from('.about-text', {
-        scrollTrigger: { trigger: '.about-grid', start: 'top 70%' },
-        opacity: 0, x: -50, duration: 0.8
-    });
-    gsap.from('.about-visual', {
-        scrollTrigger: { trigger: '.about-grid', start: 'top 70%' },
-        opacity: 0, x: 50, duration: 0.8
-    });
-    gsap.from('.highlight-item', {
-        scrollTrigger: { trigger: '.about-highlights', start: 'top 80%' },
-        opacity: 0, x: -30, duration: 0.6, stagger: 0.15
+    gsap.fromTo('.about-text', 
+        { opacity: 0, x: -50 },
+        { scrollTrigger: { trigger: '.about-grid', start: 'top 85%', toggleActions: 'play none none none' }, opacity: 1, x: 0, duration: 0.8 }
+    );
+    gsap.fromTo('.about-visual', 
+        { opacity: 0, x: 50 },
+        { scrollTrigger: { trigger: '.about-grid', start: 'top 85%', toggleActions: 'play none none none' }, opacity: 1, x: 0, duration: 0.8 }
+    );
+
+    gsap.utils.toArray('.highlight-item').forEach((item, i) => {
+        gsap.fromTo(item, 
+            { opacity: 0, x: -30 },
+            { scrollTrigger: { trigger: item, start: 'top 90%', toggleActions: 'play none none none' }, opacity: 1, x: 0, duration: 0.6, delay: i * 0.1 }
+        );
     });
 
-    // Skill cards
-    gsap.from('.skill-card', {
-        scrollTrigger: { trigger: '.skills-categories', start: 'top 75%' },
-        opacity: 0, y: 40, duration: 0.6, stagger: 0.15
+    gsap.utils.toArray('.skill-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+            { opacity: 0, y: 40 },
+            { scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' }, opacity: 1, y: 0, duration: 0.6, delay: i * 0.1 }
+        );
     });
 
-    // Experience items
-    gsap.from('.exp-item', {
-        scrollTrigger: { trigger: '.experience-timeline', start: 'top 70%' },
-        opacity: 0, x: -40, duration: 0.7, stagger: 0.2
+    gsap.utils.toArray('.exp-item').forEach((item, i) => {
+        gsap.fromTo(item, 
+            { opacity: 0, x: -40 },
+            { scrollTrigger: { trigger: item, start: 'top 90%', toggleActions: 'play none none none' }, opacity: 1, x: 0, duration: 0.7, delay: i * 0.1 }
+        );
     });
 
-    // Project cards
-    gsap.from('.project-card', {
-        scrollTrigger: { trigger: '.projects-grid', start: 'top 75%' },
-        opacity: 0, y: 50, duration: 0.7, stagger: 0.2
+    gsap.utils.toArray('.project-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+            { opacity: 0, y: 50 },
+            { scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' }, opacity: 1, y: 0, duration: 0.7, delay: i * 0.1 }
+        );
     });
 
-    // AI cards
-    gsap.from('.ai-card', {
-        scrollTrigger: { trigger: '.ai-grid', start: 'top 75%' },
-        opacity: 0, y: 40, scale: 0.95, duration: 0.7, stagger: 0.15
+    gsap.utils.toArray('.ai-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+            { opacity: 0, y: 40, scale: 0.95 },
+            { scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' }, opacity: 1, y: 0, scale: 1, duration: 0.7, delay: i * 0.1 }
+        );
     });
 
-    // Contact cards
-    gsap.from('.contact-card', {
-        scrollTrigger: { trigger: '.contact-grid', start: 'top 80%' },
-        opacity: 0, y: 30, duration: 0.6, stagger: 0.1
+    gsap.utils.toArray('.contact-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+            { opacity: 0, y: 30 },
+            { scrollTrigger: { trigger: card, start: 'top 92%', toggleActions: 'play none none none' }, opacity: 1, y: 0, duration: 0.6, delay: i * 0.1 }
+        );
     });
 
-    // Resume section
-    gsap.from('.resume-cta', {
-        scrollTrigger: { trigger: '.resume-section', start: 'top 80%' },
-        opacity: 0, y: 40, duration: 0.8
-    });
+    gsap.fromTo('.resume-cta', 
+        { opacity: 0, y: 40 },
+        { scrollTrigger: { trigger: '.resume-section', start: 'top 85%', toggleActions: 'play none none none' }, opacity: 1, y: 0, duration: 0.8 }
+    );
 }
 
 // === NAVIGATION ===
