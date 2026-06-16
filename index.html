@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvhengo Ntanganedzeni - Software Developer</title>
+    <meta name="description" content="Software Developer specializing in full-stack development, AI integration, and scalable enterprise solutions.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-text">
+                <span>L</span><span>N</span>
+            </div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <span class="logo-bracket">&lt;</span>LN<span class="logo-bracket">/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#ai" class="nav-link">AI</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Particles -->
+    <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-title">
+                <span class="line">Hi, I'm</span>
+                <span class="line name-line">Luvhengo <span class="highlight">Ntanganedzeni</span></span>
+            </h1>
+            <div class="typed-wrapper">
+                <span class="typed-prefix">I build </span>
+                <span id="typed-text"></span>
+                <span class="typed-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Full-Stack Developer crafting scalable enterprise solutions with modern technologies. 
+                Passionate about AI integration, clean architecture, and building the future of software.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn-outline">Let's Connect</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a detail-oriented Software Developer with a <strong>BSc in Computer Science & Mathematics</strong> 
+                        from the University of Venda, currently building enterprise solutions at <strong>Adapt IT</strong>.
+                    </p>
+                    <p>
+                        My expertise spans full-stack development with C#, ASP.NET, Angular, and Java, 
+                        complemented by strong database skills in PostgreSQL, Oracle, and SQL. I'm passionate about 
+                        leveraging AI and modern architectures to solve complex business problems.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎓</div>
+                            <div>
+                                <h4>BSc Computer Science & Mathematics</h4>
+                                <p>University of Venda (2019 - 2023)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">💼</div>
+                            <div>
+                                <h4>Software Developer</h4>
+                                <p>Adapt IT, Midrand (2025 - Present)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <div>
+                                <h4>Focus Areas</h4>
+                                <p>Full-Stack, AI Integration, Enterprise Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="code-window" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="code-title">developer.ts</span>
+                        </div>
+                        <pre class="code-body"><code><span class="keyword">interface</span> <span class="type">Developer</span> {
+  name: <span class="string">"Luvhengo Ntanganedzeni"</span>;
+  role: <span class="string">"Full-Stack Developer"</span>;
+  languages: [<span class="string">"C#"</span>, <span class="string">"Java"</span>, <span class="string">"TypeScript"</span>, <span class="string">"Python"</span>];
+  frameworks: [<span class="string">"ASP.NET"</span>, <span class="string">"Angular"</span>, <span class="string">"Spring"</span>];
+  databases: [<span class="string">"PostgreSQL"</span>, <span class="string">"Oracle"</span>, <span class="string">"MySQL"</span>];
+  passion: <span class="string">"Building scalable solutions"</span>;
+  available: <span class="keyword">true</span>;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
+            </div>
+            <div class="skills-orbit">
+                <div class="orbit-center">
+                    <span>CORE</span>
+                </div>
+                <div class="skills-categories">
+                    <div class="skill-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                        <div class="skill-card-glow"></div>
+                        <h3><span class="skill-icon">⚡</span> Languages & Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="90">C#</span>
+                            <span class="skill-tag" data-level="85">ASP.NET</span>
+                            <span class="skill-tag" data-level="80">Angular</span>
+                            <span class="skill-tag" data-level="85">Java</span>
+                            <span class="skill-tag" data-level="80">JavaScript</span>
+                            <span class="skill-tag" data-level="75">TypeScript</span>
+                            <span class="skill-tag" data-level="70">Python</span>
+                            <span class="skill-tag" data-level="85">HTML/CSS/SCSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                        <div class="skill-card-glow"></div>
+                        <h3><span class="skill-icon">🗄️</span> Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="85">PostgreSQL</span>
+                            <span class="skill-tag" data-level="80">Oracle Database</span>
+                            <span class="skill-tag" data-level="85">MySQL</span>
+                            <span class="skill-tag" data-level="90">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                        <div class="skill-card-glow"></div>
+                        <h3><span class="skill-icon">🛠️</span> Tools & DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="85">Git</span>
+                            <span class="skill-tag" data-level="80">REST APIs</span>
+                            <span class="skill-tag" data-level="75">Docker</span>
+                            <span class="skill-tag" data-level="80">VS Code</span>
+                            <span class="skill-tag" data-level="75">Visual Studio</span>
+                            <span class="skill-tag" data-level="70">CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                        <div class="skill-card-glow"></div>
+                        <h3><span class="skill-icon">🧠</span> Concepts & Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-level="85">SDLC</span>
+                            <span class="skill-tag" data-level="80">Agile/Scrum</span>
+                            <span class="skill-tag" data-level="80">Database Design</span>
+                            <span class="skill-tag" data-level="75">System Architecture</span>
+                            <span class="skill-tag" data-level="70">AI Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                <div class="exp-item">
+                    <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+                    <div class="exp-card" data-tilt data-tilt-max="3" data-tilt-speed="400">
+                        <div class="exp-date">Jan 2025 – Present</div>
+                        <h3>Software Developer</h3>
+                        <h4>Adapt IT – Midrand</h4>
+                        <ul>
+                            <li>Developing and maintaining web applications using C#, ASP.NET, Angular, and Java</li>
+                            <li>Designing, querying, and optimizing databases using PostgreSQL, Oracle Database, and SQL</li>
+                            <li>Building and consuming RESTful APIs for enterprise integrations</li>
+                            <li>Implementing backend features including activity logging, validation, and system integrations</li>
+                            <li>Collaborating with cross-functional teams to deliver reliable software solutions</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>C#</span><span>ASP.NET</span><span>Angular</span><span>PostgreSQL</span><span>Oracle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+                    <div class="exp-card" data-tilt data-tilt-max="3" data-tilt-speed="400">
+                        <div class="exp-date">Jun 2024 – Jan 2025</div>
+                        <h3>IT Support / Cybersecurity Learnership</h3>
+                        <h4>Hemmersbach – Midrand</h4>
+                        <ul>
+                            <li>Delivered IT support services in an enterprise environment</li>
+                            <li>Assisted with system access management, troubleshooting, and incident resolution</li>
+                            <li>Supported security and operational best practices</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>IT Support</span><span>Cybersecurity</span><span>Troubleshooting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+                    <div class="exp-card" data-tilt data-tilt-max="3" data-tilt-speed="400">
+                        <div class="exp-date">Feb 2023 – Nov 2023</div>
+                        <h3>Digital Maths Tutor</h3>
+                        <h4>University of Venda</h4>
+                        <ul>
+                            <li>Facilitated weekly tutoring sessions for second-year students in Digital Design</li>
+                            <li>Developed and delivered instructional materials and practice problems</li>
+                            <li>Conducted review sessions to help students prepare for examinations</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>Teaching</span><span>Digital Design</span><span>Mentorship</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"><div class="exp-dot-inner"></div></div>
+                    <div class="exp-card" data-tilt data-tilt-max="3" data-tilt-speed="400">
+                        <div class="exp-date">Feb 2021 – Nov 2021</div>
+                        <h3>Computer Science Laboratory Assistant</h3>
+                        <h4>University of Venda</h4>
+                        <ul>
+                            <li>Provided technical support and assistance during laboratory sessions</li>
+                            <li>Guided students through practical exercises and CS projects</li>
+                            <li>Maintained and updated laboratory computers and software</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span>Technical Support</span><span>Lab Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI & Innovation Section -->
+    <section id="ai" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;innovation&gt;</span>
+                <h2 class="section-title">AI & <span class="highlight">Innovation</span></h2>
+                <p class="section-subtitle">Leveraging cutting-edge technology to build intelligent solutions</p>
+            </div>
+            <div class="ai-grid">
+                <div class="ai-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                    <div class="ai-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Machine Learning Integration</h3>
+                    <p>Experience integrating ML models into production applications for intelligent data processing and automated decision-making pipelines.</p>
+                    <div class="ai-tags"><span>TensorFlow</span><span>Python</span><span>Data Pipelines</span></div>
+                </div>
+                <div class="ai-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                    <div class="ai-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <h3>AI-Powered Automation</h3>
+                    <p>Building intelligent automation tools using AI APIs and LLMs to streamline business processes, reduce manual work, and enhance productivity.</p>
+                    <div class="ai-tags"><span>OpenAI API</span><span>LangChain</span><span>Automation</span></div>
+                </div>
+                <div class="ai-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                    <div class="ai-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Developing data-driven solutions using statistical models and visualization tools to extract insights and predict trends from complex datasets.</p>
+                    <div class="ai-tags"><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span></div>
+                </div>
+                <div class="ai-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                    <div class="ai-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Smart Enterprise Systems</h3>
+                    <p>Architecting enterprise applications with AI-enhanced features like intelligent search, automated logging, and adaptive user interfaces.</p>
+                    <div class="ai-tags"><span>C#</span><span>Azure AI</span><span>Microservices</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">01</div>
+                    <div class="project-icon">📊</div>
+                    <h3>Inventory Management System</h3>
+                    <p>Web-based application to manage inventory for a local business. Streamlined tracking process, reducing manual errors by 50%.</p>
+                    <div class="project-tech">
+                        <span>C#</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">02</div>
+                    <div class="project-icon">📈</div>
+                    <h3>Data Visualization Tool</h3>
+                    <p>Tool to visualize large datasets for better data interpretation. Enables users to generate interactive graphs and charts.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>Matplotlib</span><span>Seaborn</span><span>Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">03</div>
+                    <div class="project-icon">🏠</div>
+                    <h3>Montana Student Accommodation</h3>
+                    <p>Modern, responsive website for student accommodation featuring interactive galleries, contact forms, and facility showcases.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ntanga95.github.io/montana-student-accommodation/" target="_blank" class="project-link-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+                <p class="section-subtitle">Ready to build something amazing together? Let's talk.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:luvhengoprecious215@gmail.com" class="contact-card" data-tilt data-tilt-max="8" data-tilt-speed="400">
+                    <div class="contact-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>luvhengoprecious215@gmail.com</p>
+                </a>
+                <a href="tel:+27829632759" class="contact-card" data-tilt data-tilt-max="8" data-tilt-speed="400">
+                    <div class="contact-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>082 963 2759</p>
+                </a>
+                <a href="https://github.com/Ntanga695" target="_blank" class="contact-card" data-tilt data-tilt-max="8" data-tilt-speed="400">
+                    <div class="contact-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>github.com/Ntanga695</p>
+                </a>
+                <div class="contact-card" data-tilt data-tilt-max="8" data-tilt-speed="400">
+                    <div class="contact-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Midrand, Gauteng, South Africa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Download Section -->
+    <section class="section resume-section">
+        <div class="container" style="text-align: center;">
+            <div class="resume-cta">
+                <h2 class="section-title">Want to know <span class="highlight">more</span>?</h2>
+                <p class="section-subtitle" style="margin-bottom: 2rem;">Download my resume for a detailed overview of my experience and skills.</p>
+                <a href="#" class="btn-primary btn-download" id="downloadResume">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-bracket">&lt;</span>LN<span class="logo-bracket">/&gt;</span>
+            </div>
+            <p>Designed & Built by Luvhengo Ntanganedzeni &copy; 2025</p>
+            <p class="footer-tagline">Building the future with AI, one line of code at a time.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
